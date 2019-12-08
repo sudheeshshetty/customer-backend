@@ -37,7 +37,7 @@ module.exports = function (router) {
             if (err) {
                 res.status(500).send('Error finding user')
             } else if (user) {
-                res.status(500).send('User already found')
+                res.status(200).send('User already found')
             } else if (!user && !err) {
                 models.user.create(newUser, (err, newuser) => {
                     if (err) {
